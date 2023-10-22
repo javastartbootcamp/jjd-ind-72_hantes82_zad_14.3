@@ -27,7 +27,7 @@ public class MainTest {
     @Test
     void shouldWorkForOnlyOneCountry() throws Exception {
         // given
-        copyFileFromResources("example1.csv", "countries.csv");
+        copyFileFromResources("example1.csv", "src/main/countries.csv");
         Scanner scanner = provideInput("PL");
 
         // when
@@ -40,7 +40,7 @@ public class MainTest {
     @Test
     void shouldWorkForMultipleCountries() throws Exception {
         // given
-        copyFileFromResources("example2.csv", "countries.csv");
+        copyFileFromResources("example2.csv", "src/main/countries.csv");
         Scanner scanner = provideInput("DE");
 
         // when
@@ -54,7 +54,7 @@ public class MainTest {
     void shouldDisplayMessageWhenNoFile() {
         // given
 
-        File file = new File("countries.csv");
+        File file = new File("src/main/countries.csv");
         if (file.exists()) {
             boolean deleted = file.delete();
             if (!deleted) {
@@ -74,7 +74,7 @@ public class MainTest {
     @Test
     void shouldDisplayMessageWhenCountryNotFound() throws Exception {
         // given
-        copyFileFromResources("example1.csv", "countries.csv");
+        copyFileFromResources("example1.csv", "src/main/countries.csv");
         Scanner scanner = provideInput("XX");
 
         // when
