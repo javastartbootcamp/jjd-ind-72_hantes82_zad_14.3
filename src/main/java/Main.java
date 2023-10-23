@@ -17,16 +17,11 @@ public class Main {
         }
         System.out.println("Podaj kod kraju, o którym chcesz zobaczyć informacje:");
         String code = scanner.nextLine();
-        for (Map.Entry<String, Country> entry : countries.entrySet()) {
-            if (entry.getKey().equals(code)) {
-                Country country = entry.getValue();
-                System.out.printf("%s (%s) ma %d ludności.", country.getCountryName(), country.getCountryCode(),
-                        country.getPeopleNumber());
-                return;
-            }
-
+        if (countries.get(code) == null) {
+            System.out.println("Kod kraju " + code + " nie został znaleziony.");
+        } else {
+            Country country = countries.get(code);
+            System.out.printf("%s (%s) ma %d ludności.", country.getName(), country.getCode(), country.getPeopleNumber());
         }
-        System.out.println("Kod kraju " + code + " nie został znaleziony.");
     }
-
 }

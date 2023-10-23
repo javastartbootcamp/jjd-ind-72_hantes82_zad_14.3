@@ -3,8 +3,6 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class FileOperations {
-    private String filePath;
-
     public static Map<String, Country> loadCountriesFromFile(String filePath) {
         File file = new File(filePath);
         Map<String, Country> countries = new HashMap<>();

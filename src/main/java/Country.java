@@ -1,22 +1,22 @@
 import java.util.Objects;
 
 public class Country {
-    private String countryCode;
-    private String countryName;
-    long peopleNumber;
+    private String code;
+    private String name;
+    private long peopleNumber;
 
-    public Country(String countryCode, String countryName, long peopleNumber) {
-        this.countryCode = countryCode;
-        this.countryName = countryName;
+    public Country(String code, String name, long peopleNumber) {
+        this.code = code;
+        this.name = name;
         this.peopleNumber = peopleNumber;
     }
 
-    public String getCountryCode() {
-        return countryCode;
+    public String getCode() {
+        return code;
     }
 
-    public String getCountryName() {
-        return countryName;
+    public String getName() {
+        return name;
     }
 
     public long getPeopleNumber() {
@@ -31,19 +31,19 @@ public class Country {
         if (!(o instanceof Country country)) {
             return false;
         }
-        return peopleNumber == country.peopleNumber && Objects.equals(countryCode, country.countryCode) && Objects.equals(countryName, country.countryName);
+        return peopleNumber == country.peopleNumber && Objects.equals(code, country.code) && Objects.equals(name, country.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(countryCode, countryName, peopleNumber);
+        return Objects.hash(code, name, peopleNumber);
     }
 
     @Override
     public String toString() {
         return "Country{" +
-                "countryCode='" + countryCode + '\'' +
-                ", countryName='" + countryName + '\'' +
+                "countryCode='" + code + '\'' +
+                ", countryName='" + name + '\'' +
                 ", peopleNumber=" + peopleNumber +
                 '}';
     }
